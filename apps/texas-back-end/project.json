@@ -1,0 +1,52 @@
+{
+  "root": "apps/texas-back-end",
+  "sourceRoot": "apps/texas-back-end/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/node:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/texas-back-end",
+        "main": "apps/texas-back-end/src/main.ts",
+        "tsConfig": "apps/texas-back-end/tsconfig.app.json",
+        "assets": ["apps/texas-back-end/src/assets"]
+      },
+      "configurations": {
+        "production": {
+          "optimization": true,
+          "extractLicenses": true,
+          "inspect": false,
+          "fileReplacements": [
+            {
+              "replace": "apps/texas-back-end/src/environments/environment.ts",
+              "with": "apps/texas-back-end/src/environments/environment.prod.ts"
+            }
+          ]
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/node:execute",
+      "options": {
+        "buildTarget": "texas-back-end:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/texas-back-end/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/texas-back-end"],
+      "options": {
+        "jestConfig": "apps/texas-back-end/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
