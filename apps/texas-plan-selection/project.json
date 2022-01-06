@@ -1,0 +1,94 @@
+{
+  "projectType": "application",
+  "root": "apps/texas-plan-selection",
+  "sourceRoot": "apps/texas-plan-selection/src",
+  "prefix": "ele-marketplace",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/texas-plan-selection",
+        "index": "apps/texas-plan-selection/src/index.html",
+        "main": "apps/texas-plan-selection/src/main.ts",
+        "polyfills": "apps/texas-plan-selection/src/polyfills.ts",
+        "tsConfig": "apps/texas-plan-selection/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          "apps/texas-plan-selection/src/favicon.ico",
+          "apps/texas-plan-selection/src/assets"
+        ],
+        "styles": ["apps/texas-plan-selection/src/styles.scss"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/texas-plan-selection/src/environments/environment.ts",
+              "with": "apps/texas-plan-selection/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "texas-plan-selection:build:production"
+        },
+        "development": {
+          "browserTarget": "texas-plan-selection:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "texas-plan-selection:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/texas-plan-selection/src/**/*.ts",
+          "apps/texas-plan-selection/src/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/texas-plan-selection"],
+      "options": {
+        "jestConfig": "apps/texas-plan-selection/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

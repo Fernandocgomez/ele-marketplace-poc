@@ -1,4 +1,7 @@
 {
   "version": 2,
-  "projects": {}
+  "projects": {
+    "texas-plan-selection": "apps/texas-plan-selection",
+    "texas-plan-selection-e2e": "apps/texas-plan-selection-e2e"
+  }
 }
