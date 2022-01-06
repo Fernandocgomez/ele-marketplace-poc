@@ -1,0 +1,28 @@
+{
+  "root": "apps/texas-choice-energy-e2e",
+  "sourceRoot": "apps/texas-choice-energy-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/texas-choice-energy-e2e/cypress.json",
+        "devServerTarget": "texas-choice-energy:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "texas-choice-energy:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/texas-choice-energy-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["texas-choice-energy"]
+}

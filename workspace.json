@@ -1,6 +1,8 @@
 {
   "version": 2,
   "projects": {
+    "texas-choice-energy": "apps/texas-choice-energy",
+    "texas-choice-energy-e2e": "apps/texas-choice-energy-e2e",
     "texas-plan-selection": "apps/texas-plan-selection",
     "texas-plan-selection-e2e": "apps/texas-plan-selection-e2e",
     "texas-txu-energy": "apps/texas-txu-energy",
