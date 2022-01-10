@@ -6,7 +6,7 @@ import { FormlyFieldInput } from '../formly-types/formly-field-input.type';
 
 @NgModule({
   declarations: [
-    FormlyFieldInput
+    FormlyFieldInput,
   ],
   imports: [
     CommonModule,
@@ -21,7 +21,7 @@ import { FormlyFieldInput } from '../formly-types/formly-field-input.type';
   ],
   exports: [
     ReactiveFormsModule,
-    FormlyModule
+    FormlyModule,
   ]
 })
 export class FormlyLibModule {}

@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { PlanCardComponent } from './components/plan-card/plan-card.component';
 import { EstimatedMonthlyUsageFilterComponent } from './components/estimated-monthly-usage-filter/estimated-monthly-usage-filter.component';
-import { FormlyLibModule } from './../../../../libs/formly-lib/src/lib/formly-lib.module';
+import { FormlyLibModule } from '@ele-marketplace/formly-lib';
 
 @NgModule({
   declarations: [AppComponent, PlanCardComponent, EstimatedMonthlyUsageFilterComponent],
