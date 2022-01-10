@@ -18,42 +18,8 @@ interface Lead {
 })
 export class AppComponent implements OnInit {
   title = 'texas-plan-selection';
-  form = new FormGroup({});
-  model?: Lead;
-  fields: FormlyFieldConfig[] = [
-    {
-      key: 'email',
-      type: 'input',
-      templateOptions: {
-        label: 'Email address',
-        placeholder: 'Enter email',
-        required: true,
-      }
-    },
-    {
-      key: 'firstName',
-      type: 'input',
-      templateOptions: {
-        label: 'first name',
-        placeholder: 'first name',
-        required: true,
-      },
-    },
-  ];
 
-  constructor(private leadService: LeadService) {}
+  constructor() {}
 
-  ngOnInit(): void {
-    this.leadService.lead$
-    .pipe(first())
-    .subscribe((lead) => {
-      this.model = lead;
-    });
-  }
-
-  onSubmit(model: any) {
-    this.leadService.updateLead(model).subscribe((lead) => {
-      this.model = model;
-    })
-  }
+  ngOnInit(): void {}
 }
