@@ -52,7 +52,8 @@ export class AppComponent implements OnInit {
   }
 
   onSubmit(model: any) {
-    this.model = model;
-    console.log(this.model);
+    this.leadService.updateLead(model).subscribe((lead) => {
+      this.model = model;
+    })
   }
 }

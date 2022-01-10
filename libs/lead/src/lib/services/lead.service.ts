@@ -24,7 +24,11 @@ export class LeadService {
 	}
 
     callServer(): Observable<any> {
-        return this.http.get<any>(data).pipe(delay(1000))
+        return this.http.get<any>('http://localhost:3333/api/lead/1').pipe(delay(1500))
+    }
+
+    updateLead(lead: Lead): Observable<any> {
+        return this.http.put<any>('http://localhost:3333/api/lead', lead).pipe(delay(1500))
     }
   
     constructor(private http: HttpClient) {

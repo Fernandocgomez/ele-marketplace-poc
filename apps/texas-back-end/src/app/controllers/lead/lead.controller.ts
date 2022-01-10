@@ -26,7 +26,9 @@ export class LeadController {
             return l.id === params.id;
         })
 
+        
         return lead;
+
     }
 
     @Put()
