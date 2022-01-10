@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/formly-lib",
+  "sourceRoot": "libs/formly-lib/src",
+  "prefix": "ele-marketplace",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/formly-lib"],
+      "options": {
+        "jestConfig": "libs/formly-lib/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/formly-lib/src/**/*.ts",
+          "libs/formly-lib/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}
