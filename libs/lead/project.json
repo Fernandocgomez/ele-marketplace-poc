@@ -1,0 +1,23 @@
+{
+  "projectType": "library",
+  "root": "libs/lead",
+  "sourceRoot": "libs/lead/src",
+  "prefix": "ele-marketplace",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/lead"],
+      "options": {
+        "jestConfig": "libs/lead/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/lead/src/**/*.ts", "libs/lead/src/**/*.html"]
+      }
+    }
+  },
+  "tags": []
+}

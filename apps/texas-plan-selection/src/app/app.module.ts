@@ -5,12 +5,16 @@ import { AppComponent } from './app.component';
 import { PlanCardComponent } from './components/plan-card/plan-card.component';
 import { EstimatedMonthlyUsageFilterComponent } from './components/estimated-monthly-usage-filter/estimated-monthly-usage-filter.component';
 import { FormlyLibModule } from '@ele-marketplace/formly-lib';
+import { LeadModule } from '@ele-marketplace/lead';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent, PlanCardComponent, EstimatedMonthlyUsageFilterComponent],
   imports: [
     BrowserModule,
-    FormlyLibModule
+    FormlyLibModule,
+    LeadModule.forRoot(),
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

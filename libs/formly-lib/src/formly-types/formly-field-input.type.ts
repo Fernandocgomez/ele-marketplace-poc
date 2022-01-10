@@ -16,7 +16,6 @@ import { FieldType } from '@ngx-formly/core';
       [id]="id" 
       [formControl]="formControl" 
       [formlyAttributes]="field"
-      (change)="log()"
     >
     <div 
       class="invalid-feedback"
@@ -40,8 +39,4 @@ export class FormlyFieldInput extends FieldType {
     }
     return '';
   }  
-  
-  log() {
-    console.log(this.formControl);
-  }
 }

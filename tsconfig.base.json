@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@ele-marketplace/formly-lib": ["libs/formly-lib/src/index.ts"]
+      "@ele-marketplace/formly-lib": ["libs/formly-lib/src/index.ts"],
+      "@ele-marketplace/lead": ["libs/lead/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

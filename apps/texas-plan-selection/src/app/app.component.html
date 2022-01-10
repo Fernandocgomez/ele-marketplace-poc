@@ -11,9 +11,12 @@
             <ele-marketplace-plan-card></ele-marketplace-plan-card>
         </div>
     </div> -->
-    <form [formGroup]="form" (ngSubmit)="onSubmit(model)">
+    <form [formGroup]="form" (ngSubmit)="onSubmit(model)" (change)="onSubmit(model)" *ngIf="model">
         <formly-form [form]="form" [fields]="fields" [model]="model"></formly-form>
         <button type="submit" class="btn btn-default">Submit</button>
     </form>
+    <div>
+        {{ model | json }}
+    </div>
 </div>
 
