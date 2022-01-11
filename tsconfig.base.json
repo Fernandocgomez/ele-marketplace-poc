@@ -16,7 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@ele-marketplace/formly-lib": ["libs/formly-lib/src/index.ts"],
-      "@ele-marketplace/lead": ["libs/lead/src/index.ts"]
+      "@ele-marketplace/lead": ["libs/lead/src/index.ts"],
+      "@ele-marketplace/resolvers": ["libs/resolvers/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

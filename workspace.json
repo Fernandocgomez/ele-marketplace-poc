@@ -3,6 +3,7 @@
   "projects": {
     "formly-lib": "libs/formly-lib",
     "lead": "libs/lead",
+    "resolvers": "libs/resolvers",
     "texas-back-end": "apps/texas-back-end",
     "texas-choice-energy": "apps/texas-choice-energy",
     "texas-choice-energy-e2e": "apps/texas-choice-energy-e2e",

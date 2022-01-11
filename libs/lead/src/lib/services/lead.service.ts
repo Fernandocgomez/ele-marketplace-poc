@@ -17,22 +17,24 @@ export class LeadService {
 		id: ''
 	});
 
-    private lead: Observable<Lead> = this._lead.asObservable();
+    public lead: Observable<Lead> = this._lead.asObservable();
 
     get lead$(): Observable<Lead> {
 		return this.lead;
 	}
 
-    callServer(): Observable<any> {
-        return this.http.get<any>('http://localhost:3333/api/lead/1').pipe(delay(1500))
+    getLead(cookieId: string): Observable<any> {
+        return this.http.get<any>(`http://localhost:3333/api/lead/${cookieId}`).pipe(delay(1500))
     }
 
     updateLead(lead: Lead): Observable<any> {
         return this.http.put<any>('http://localhost:3333/api/lead', lead).pipe(delay(1500))
     }
-  
-    constructor(private http: HttpClient) {
-        this.lead = this.callServer();
+
+    createLead(): Observable<any> {
+        return this.http.post<any>('http://localhost:3333/api/lead', {}).pipe(delay(1500))
     }
+  
+    constructor(private http: HttpClient) {}
   
 }

@@ -1,4 +1,5 @@
-import { Body, Controller, Get, Param, Put } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post, Put } from '@nestjs/common';
+import { v4 as uuidv4 } from 'uuid';
 
 interface Lead {
     id: string;
@@ -43,5 +44,16 @@ export class LeadController {
 
         return newLead;
 
+    }
+
+    @Post()
+    async create() {
+        const newLead = {
+            id: uuidv4()
+        }
+
+        data.push(newLead);
+        
+        return newLead;
     }
 }
