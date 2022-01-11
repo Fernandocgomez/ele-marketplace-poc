@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, delay, first, Observable, of } from 'rxjs';
+import { BehaviorSubject, delay, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 interface Lead {
@@ -7,8 +7,6 @@ interface Lead {
 
     [key: string]: any;
 }
-
-const data = 'assets/data.json';
 
 @Injectable()
 export class LeadService {

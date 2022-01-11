@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Plan } from '../../models/plan';
 
 @Component({
@@ -18,7 +18,7 @@ import { Plan } from '../../models/plan';
           </div>
         </div>
         <p class="card-text">{{ plan.description }}</p>
-        <a [attr.href]="plan.url" class="btn btn-primary float-end fw-bold">Select Plan</a>
+        <a class="btn btn-primary float-end fw-bold" (click)="onClick()">Select Plan</a>
       </div>
     </div>
   `,
@@ -26,5 +26,10 @@ import { Plan } from '../../models/plan';
 })
 export class PlanCardComponent {
   @Input() plan: Plan = new Plan();
+  @Output() clickPlan: EventEmitter<Plan> = new EventEmitter();
+
+  onClick() {
+    this.clickPlan.emit(this.plan);
+  }
 }
 
